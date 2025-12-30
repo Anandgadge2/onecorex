@@ -20,6 +20,8 @@ const buttonVariants = cva(
         elegant: "bg-transparent border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500 ease-smooth",
         minimal: "bg-transparent text-muted-foreground hover:text-primary transition-colors duration-300 ease-smooth",
         gold: "bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold transition-all duration-500 ease-smooth",
+        new: "bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-500 ease-smooth shadow-md hover:shadow-lg",
+
       },
       size: {
         default: "h-10 px-4 py-2",

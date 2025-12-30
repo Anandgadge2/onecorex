@@ -38,9 +38,9 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-charcoal border-t border-border relative overflow-hidden">
+    <footer className="bg-primary border-t border-border relative overflow-hidden">
       {/* Overlay to hide any background patterns */}
-      <div className="absolute inset-0 bg-charcoal z-0" />
+      <div className="absolute inset-0 bg-primary z-0" />
       {/* Main Footer */}
       <div className="container-luxury section-padding relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
@@ -49,7 +49,7 @@ export const Footer = () => {
             <Link to="/" className="inline-block mb-6">
               <img src={logo} alt="OneCoreX" className="h-12 w-auto" />
             </Link>
-            <p className="body-elegant mb-6">
+            <p className="text-base md:text-lg font-light leading-relaxed text-white mb-6">
               Crafting spaces that inspire. We blend creativity with engineering
               precision to create meaningful experiences.
             </p>
@@ -60,7 +60,7 @@ export const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+                  className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:text-white hover:border-white transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={social.label}
@@ -79,7 +79,7 @@ export const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-white hover:text-white/80 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -96,7 +96,7 @@ export const Footer = () => {
                 <li key={index}>
                   <Link
                     to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-white hover:text-white/80 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -112,7 +112,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="tel:+971525315971"
-                  className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-start gap-3 text-white hover:text-white/80 transition-colors"
                 >
                   <Phone size={18} className="mt-1 flex-shrink-0" />
                   <span>+971 52 531 5971</span>
@@ -121,14 +121,14 @@ export const Footer = () => {
               <li>
                 <a
                   href="mailto:info@onecorex.ae"
-                  className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-start gap-3 text-white hover:text-white/80 transition-colors"
                 >
                   <Mail size={18} className="mt-1 flex-shrink-0" />
                   <span>info@onecorex.ae</span>
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-3 text-muted-foreground">
+                <div className="flex items-start gap-3 text-white">
                   <MapPin size={18} className="mt-1 flex-shrink-0" />
                   <span>
                     First Floor, Princess Cars Building,
@@ -148,13 +148,13 @@ export const Footer = () => {
       <div className="border-t border-border relative z-10">
         <div className="container-luxury py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-white">
               © {new Date().getFullYear()} OneCoreX Design and Implementation LLC. All rights reserved.
             </p>
-            <p className="text-sm text-muted-foreground">
-              <span className="text-primary">Design.</span>{' '}
-              <span className="text-primary">Deliver.</span>{' '}
-              <span className="text-primary">Dazzle.</span>
+            <p className="text-sm text-white">
+              <span className="text-white font-semibold">Design.</span>{' '}
+              <span className="text-white font-semibold">Deliver.</span>{' '}
+              <span className="text-white font-semibold">Dazzle.</span>
             </p>
           </div>
         </div>

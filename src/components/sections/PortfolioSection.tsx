@@ -49,16 +49,16 @@ export const PortfolioSection = () => {
           className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16"
         >
           <div>
-            <motion.span variants={staggerItem} className="label-elegant block mb-4">
+            <motion.span variants={staggerItem} className="label-elegant-light block mb-4">
               Our Portfolio
             </motion.span>
             <motion.h2 variants={staggerItem} className="heading-section">
-              <span className="text-white">Featured</span> <span className="text-primary">Projects</span>
+              <span className="text-white">Featured</span> <span className="text-black">Projects</span>
             </motion.h2>
             <motion.div variants={staggerItem} className="gold-line-lg mt-6" />
           </div>
           <motion.div variants={staggerItem}>
-            <Button variant="elegant" size="lg" asChild>
+            <Button variant="new" size="lg" asChild>
               <Link to="/portfolio" className="group">
                 View All Projects
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -108,7 +108,7 @@ export const PortfolioSection = () => {
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  <span className="label-elegant block mb-2 text-white">{project.category}</span>
+                  <span className="label-elegant-light block mb-2 text-white">{project.category}</span>
                   <h3 className="heading-card mb-2 text-white group-hover:text-white transition-colors">
                     {project.title}
                   </h3>

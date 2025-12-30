@@ -53,9 +53,9 @@
     --gold-light: 35 35% 70%;           /* Lighter gold */
     --gold-dark: 35 30% 40%;            /* Darker gold */
 
-    --navy: 35 30% 20%;                 /* Dark warm brown (replacing navy) */
-    --charcoal: 35 25% 18%;             /* Warm dark brown */
-    --charcoal-light: 35 25% 28%;
+    --navy: 35 32% 55%;                 /* Golden color (matching button) */
+    --charcoal: 35 32% 55%;             /* Golden color (matching button) */
+    --charcoal-light: 35 35% 65%;
 
     --cream: 35 25% 92%;                /* Warm cream */
     --cream-muted: 35 20% 85%;
@@ -204,6 +204,10 @@
   
   .label-elegant {
     @apply font-body text-xs md:text-sm uppercase tracking-[0.2em] font-medium text-primary;
+  }
+  
+  .label-elegant-light {
+    @apply font-body text-xs md:text-sm uppercase tracking-[0.2em] font-medium text-white;
   }
   
   /* Glass Card */

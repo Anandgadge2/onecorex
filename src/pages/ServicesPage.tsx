@@ -225,7 +225,7 @@ const ServicesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="label-elegant block mb-4"
+              className="label-elegant-light block mb-4"
             >
               Our Process
             </motion.span>
@@ -754,7 +754,7 @@ const ServicesPage = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="label-elegant block mb-4 text-primary"
+                className="label-elegant-light block mb-4 text-primary"
               >
                 Design Excellence
               </motion.span>

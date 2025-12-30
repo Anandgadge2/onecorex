@@ -122,7 +122,7 @@ const WhyUsPage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <motion.span variants={staggerItem} className="label-elegant block mb-4">
+            <motion.span variants={staggerItem} className="label-elegant-light block mb-4">
               How We're Different
             </motion.span>
             <motion.h2 variants={staggerItem} className="heading-section mb-4">
