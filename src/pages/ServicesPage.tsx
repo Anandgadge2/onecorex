@@ -236,7 +236,7 @@ const ServicesPage = () => {
               transition={{ delay: 0.2 }}
               className="heading-section mb-4"
             >
-              <span className="text-white">Project</span> <span className="text-primary">Journey</span>
+              <span className="text-white">Project</span> <span className="text-black">Journey</span>
             </motion.h2>
             <motion.div
               initial={{ opacity: 0 }}
@@ -260,36 +260,11 @@ const ServicesPage = () => {
                 y1="80"
                 x2="900"
                 y2="80"
-                stroke="hsl(35, 32%, 30%)"
+                stroke="hsl(0, 10%, 100%)"
                 strokeWidth="1"
-                opacity="0.3"
+                opacity="0.2"
               />
-              
-              {/* Animated path that goes between circles */}
-              {/* <motion.path
-                d="M 130,80 L 870,80"
-                stroke="hsl(35, 32%, 55%)"
-                strokeWidth="3"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{
-                  pathLength: isProcessInView ? 
-                    (animationPhase % 2 === 0) 
-                      ? (currentStep / 4) 
-                      : (currentStep / 4) 
-                    : 0,
-                }}
-                transition={{ 
-                  duration: 1.2, 
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                style={{
-                  filter: 'drop-shadow(0 0 15px hsla(35, 32%, 55%, 0.8))',
-                }}
-              /> */}
-             
-
-{[0, 1, 2, 3].map((index) => {
+      {[0, 1, 2, 3].map((index) => {
   const startX = 100 + index * 200 + EXCLUDE;
   const endX = 100 + (index + 1) * 200 - EXCLUDE;
 
@@ -299,7 +274,7 @@ const ServicesPage = () => {
     <motion.path
       key={index}
       d={`M ${startX},80 L ${endX},80`}
-      stroke="hsl(35, 32%, 55%)"
+      stroke="hsl(0, 10%, 100%)"
       strokeWidth="3"
       fill="none"
       initial={{ pathLength: 0 }}
@@ -309,7 +284,7 @@ const ServicesPage = () => {
         ease: [0.22, 1, 0.36, 1],
       }}
       style={{
-        filter: 'drop-shadow(0 0 12px hsla(35, 32%, 55%, 0.8))',
+        filter: 'drop-shadow(0 0 12px hsla(0, 0%, 100%, 0.6))',
       }}
     />
   );
@@ -328,8 +303,8 @@ const ServicesPage = () => {
                         cx={x}
                         cy="80"
                         r="27"
-                        fill="hsl(35, 32%, 55%)"
-                        fillOpacity="0.15"
+                        fill="hsl(0, 0%, 100%)"
+                        fillOpacity="0.2"
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ 
@@ -344,7 +319,7 @@ const ServicesPage = () => {
                       cx={x}
                       cy="80"
                       r="27"
-                      stroke="hsl(35, 32%, 55%)"
+                      stroke="hsl(0, 0%, 100%)"
                       strokeWidth="2.5"
                       fill="none"
                       initial={{ pathLength: 0, opacity: 0 }}
@@ -357,7 +332,7 @@ const ServicesPage = () => {
                         ease: [0.22, 1, 0.36, 1],
                       }}
                       style={{
-                        filter: isActive ? 'drop-shadow(0 0 20px hsla(35, 32%, 55%, 0.8))' : 'none',
+                        filter: isActive ? 'drop-shadow(0 0 20px hsla(0, 0%, 100%, 0.6))' : 'none',
                       }}
                     />
                     
@@ -367,11 +342,11 @@ const ServicesPage = () => {
                         cx={x}
                         cy="80"
                         r="27"
-                        stroke="hsl(35, 32%, 55%)"
+                        stroke="hsl(0, 0%, 100%)"
                         strokeWidth="1"
                         fill="none"
                         initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 0.6 }}
+                        animate={{ pathLength: 1, opacity: 0.4 }}
                         transition={{ 
                           duration: 0.8,
                           delay: 0.3,
@@ -405,10 +380,10 @@ const ServicesPage = () => {
                     style={{ marginTop: '-1rem' }}
                     animate={{
                       color: currentStep > index || (currentStep === index && animationPhase % 2 === 1) 
-                        ? 'hsl(35, 32%, 55%)' 
-                        : 'hsl(35, 32%, 30%)',
+                        ? 'hsl(0, 0%, 0%)' 
+                        : 'hsl(0, 0%, 40%)',
                       textShadow: currentStep > index || (currentStep === index && animationPhase % 2 === 1) 
-                        ? '0 0 20px hsla(35, 32%, 55%, 0.8)' 
+                        ? '0 0 30px hsla(0, 0%, 0%, 0.5), 0 0 50px hsla(0, 0%, 0%, 0.3)' 
                         : 'none',
                       scale: (currentStep === index && animationPhase % 2 === 1) ? 1.1 : 1,
                     }}
@@ -418,24 +393,24 @@ const ServicesPage = () => {
                     {/* Glowing dot */}
                     {currentStep > index || (currentStep === index && animationPhase % 2 === 1) && (
                       <motion.div
-                        className="absolute -top-2 -right-2 w-3 h-3 bg-primary rounded-full"
+                        className="absolute -top-2 -right-2 w-3 h-3 bg-black rounded-full"
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.3 }}
                         style={{
-                          boxShadow: '0 0 15px hsla(35, 32%, 55%, 0.8)',
+                          boxShadow: '0 0 15px hsla(0, 0%, 0%, 0.6)',
                         }}
                       />
                     )}
                   </motion.div>
                   <motion.h4 
-                    className="font-display text-xl mb-2 text-white"
+                    className="font-display text-xl mb-2"
                     animate={{
                       color: currentStep > index || (currentStep === index && animationPhase % 2 === 1) 
-                        ? 'hsl(35, 32%, 55%)' 
-                        : 'hsl(35, 30%, 95%)',
+                        ? 'hsl(0, 0%, 0%)' 
+                        : 'hsl(0, 0%, 30%)',
                       textShadow: currentStep > index || (currentStep === index && animationPhase % 2 === 1) 
-                        ? '0 0 15px hsla(35, 32%, 55%, 0.6)' 
+                        ? '0 0 25px hsla(0, 0%, 0%, 0.4), 0 0 40px hsla(0, 0%, 0%, 0.2)' 
                         : 'none',
                     }}
                     transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
@@ -446,8 +421,11 @@ const ServicesPage = () => {
                     className="text-sm"
                     animate={{
                       color: currentStep > index || (currentStep === index && animationPhase % 2 === 1) 
-                        ? 'hsl(35, 32%, 55%)' 
-                        : 'hsl(35, 32%, 55%)',
+                        ? 'hsl(0, 0%, 20%)' 
+                        : 'hsl(0, 0%, 50%)',
+                      textShadow: currentStep > index || (currentStep === index && animationPhase % 2 === 1) 
+                        ? '0 0 20px hsla(0, 0%, 0%, 0.3), 0 0 35px hsla(0, 0%, 0%, 0.15)' 
+                        : 'none',
                     }}
                     transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                   >
@@ -465,14 +443,14 @@ const ServicesPage = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 1.2 }}
+            transition={{ delay: 0.2 }}
             className="mt-16"
           >
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 1.3 }}
+              transition={{ delay: 0.3 }}
               className="heading-section mb-8 text-center"
             >
               Our <span className="text-primary">Expertise</span>
@@ -482,7 +460,7 @@ const ServicesPage = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 1.4 }}
+              transition={{ delay: 0.4 }}
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
             >
               {[
@@ -513,7 +491,7 @@ const ServicesPage = () => {
                     transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
                   }}
                   viewport={{ once: true }}
-                  transition={{ delay: 1.5 + index * 0.05 }}
+                  transition={{ delay: 0.5 + index * 0.02 }}
                   className="p-4 min-h-[80px] relative overflow-hidden group flex items-center border-2 border-primary/30 rounded-lg bg-white/5 backdrop-blur-sm"
                 >
                   {/* Background Glow Pattern */}
@@ -530,7 +508,7 @@ const ServicesPage = () => {
                         transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
                       }}
                       viewport={{ once: true }}
-                      transition={{ delay: 1.6 + index * 0.05 }}
+                      transition={{ delay: 0.5 + index * 0.02 }}
                       className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/30 to-primary/15 flex items-center justify-center border-2 border-primary/50 shadow-lg"
                       style={{
                         boxShadow: '0 0 20px hsla(35, 32%, 55%, 0.6), 0 0 40px hsla(35, 32%, 55%, 0.3)',
@@ -559,7 +537,7 @@ const ServicesPage = () => {
                         transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
                       }}
                       viewport={{ once: true }}
-                      transition={{ delay: 1.7 + index * 0.05 }}
+                      transition={{ delay: 0.5 + index * 0.02 }}
                       className="text-sm font-medium text-gray-700 group-hover:text-primary transition-all duration-300"
                       style={{
                         textShadow: '0 0 10px hsla(35, 32%, 55%, 0.3)',
@@ -754,7 +732,7 @@ const ServicesPage = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="label-elegant-light block mb-4 text-primary"
+                className="label-elegant-light block mb-4 text-black"
               >
                 Design Excellence
               </motion.span>
@@ -765,7 +743,7 @@ const ServicesPage = () => {
                 transition={{ delay: 0.4 }}
                 className="heading-section mb-6 text-white"
               >
-                Where <span className="text-primary">Creativity</span> Meets <span className="text-primary">Precision</span>
+                Where <span className="text-black">Creativity</span> Meets <span className="text-primary">Precision</span>
               </motion.h2>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -802,10 +780,10 @@ const ServicesPage = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.8 + index * 0.1 }}
-                    className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-primary/20 hover:golden-glow"
+                    className="text-center p-4 bg-black/5 backdrop-blur-sm rounded-lg border border-white/20 hover:golden-glow"
                   >
-                    <div className="text-2xl font-bold text-primary mb-1">{stat.number}</div>
-                    <div className="text-sm text-white/70">{stat.label}</div>
+                    <div className="text-2xl font-bold text-white/50 mb-1">{stat.number}</div>
+                    <div className="text-sm text-white">{stat.label}</div>
                   </motion.div>
                 ))}
               </motion.div>

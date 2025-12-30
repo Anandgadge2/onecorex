@@ -145,7 +145,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Address</p>
-                    <p className="font-medium">
+                    <p className="font-medium hover:text-primary transition-colors">
                       First Floor, Princess Cars Building,
                       <br />
                       Near Oasis Mall, Sheikh Zayed Road,

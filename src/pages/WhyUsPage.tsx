@@ -126,7 +126,7 @@ const WhyUsPage = () => {
               How We're Different
             </motion.span>
             <motion.h2 variants={staggerItem} className="heading-section mb-4">
-              <span className="text-white">Our</span> <span className="text-primary">Differentiators</span>
+              <span className="text-white">Our</span> <span className="text-black">Differentiators</span>
             </motion.h2>
             <motion.div variants={staggerItem} className="gold-line mx-auto" />
           </motion.div>

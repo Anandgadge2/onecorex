@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Instagram, Linkedin, MessageCircle } from 'lucide-react';
 import logo from '../../assets/logo.png';
+import full_blue_logo from '../../assets/full_blue_logo.png';
 
 const footerLinks = {
   company: [
@@ -47,9 +48,9 @@ export const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <img src={logo} alt="OneCoreX" className="h-12 w-auto" />
+              <img src={full_blue_logo} alt="OneCoreX" className="h-12 w-auto invert brightness-0" />
             </Link>
-            <p className="text-base md:text-lg font-light leading-relaxed text-white mb-6">
+            <p className="text-base md:text-lg font-light leading-relaxed text-white mb-6 hover:text-black/50 transition-colors">
               Crafting spaces that inspire. We blend creativity with engineering
               precision to create meaningful experiences.
             </p>
@@ -60,7 +61,7 @@ export const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:text-white hover:border-white transition-colors"
+                  className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:text-black/50 hover:border-black/50 transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={social.label}
@@ -79,7 +80,7 @@ export const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-white hover:text-white/80 transition-colors"
+                    className="text-white hover:text-black/50 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -96,7 +97,7 @@ export const Footer = () => {
                 <li key={index}>
                   <Link
                     to={link.path}
-                    className="text-white hover:text-white/80 transition-colors"
+                    className="text-white hover:text-black/50 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -112,7 +113,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="tel:+971525315971"
-                  className="flex items-start gap-3 text-white hover:text-white/80 transition-colors"
+                  className="flex items-start gap-3 text-white hover:text-black/50 transition-colors"
                 >
                   <Phone size={18} className="mt-1 flex-shrink-0" />
                   <span>+971 52 531 5971</span>
@@ -121,14 +122,14 @@ export const Footer = () => {
               <li>
                 <a
                   href="mailto:info@onecorex.ae"
-                  className="flex items-start gap-3 text-white hover:text-white/80 transition-colors"
+                  className="flex items-start gap-3 text-white hover:text-black/50 transition-colors"
                 >
                   <Mail size={18} className="mt-1 flex-shrink-0" />
                   <span>info@onecorex.ae</span>
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-3 text-white">
+                <div className="flex items-start gap-3 text-white hover:text-black/50 transition-colors">
                   <MapPin size={18} className="mt-1 flex-shrink-0" />
                   <span>
                     First Floor, Princess Cars Building,
