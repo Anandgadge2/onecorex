@@ -250,7 +250,7 @@ const ServicesPage = () => {
           <div className="relative">
             {/* Animated SVG Path */}
             <svg 
-              className="absolute -top-[78px] left-0 right-0 h-51 z-0"
+              className="hidden lg:block absolute -top-[78px] left-0 right-0 h-51 z-0"
               viewBox="0 0 1000 160"
               preserveAspectRatio="none"
             >
@@ -359,7 +359,7 @@ const ServicesPage = () => {
               })}
             </svg>
 
-            <div className="grid md:grid-cols-5 gap-6 relative z-10" style={{ marginTop: '3rem' }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-6 relative z-10 lg:mt-12">
               {[
                 { step: '01', title: 'Consultation', desc: 'Initial meeting and brief' },
                 { step: '02', title: 'Concept', desc: 'Design development' },
