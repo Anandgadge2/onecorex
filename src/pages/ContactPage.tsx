@@ -15,6 +15,7 @@ import {
   Send,
 } from 'lucide-react';
 import contactBg from '../assets/contact-bg.jpg';
+import qrCode from '../assets/QR.png';
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -108,7 +109,8 @@ const ContactPage = () => {
                 possibilities, we're here to help bring your vision to life.
               </p>
 
-              <div className="space-y-6 mb-10">
+              <div className="space-y-8 mb-10">
+                {/* Phone */}
                 <a
                   href="tel:+971525315971"
                   className="flex items-center gap-4 group"
@@ -124,28 +126,51 @@ const ContactPage = () => {
                   </div>
                 </a>
 
-                <a
-                  href="mailto:info@onecorex.ae"
-                  className="flex items-center gap-4 group"
-                >
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Mail className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium group-hover:text-primary transition-colors">
-                      info@onecorex.ae
-                    </p>
-                  </div>
-                </a>
+                {/* Email & QR Wrapper */}
+                <div className="flex items-center justify-between gap-6">
+                  <a
+                    href="mailto:info@onecorex.ae"
+                    className="flex items-center gap-4 group"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Mail className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Email</p>
+                      <p className="font-medium group-hover:text-primary transition-colors">
+                        info@onecorex.ae
+                      </p>
+                    </div>
+                  </a>
 
+                  {/* QR Code */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9, x: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                    whileHover={{ scale: 1.05 }}
+                    className="relative"
+                  >
+                    <div className="relative p-2 rounded-xl border border-primary/30 bg-white shadow-gold/10 shadow-lg hover:shadow-gold/20 transition-all duration-300 hover:golden-glow">
+                      <img
+                        src={qrCode}
+                        alt="Contact QR"
+                        className="w-24 h-24 md:w-32 md:h-32 object-contain"
+                      />
+                      <div className="absolute -bottom-2 -right-2 bg-primary text-white text-[10px] px-2 py-0.5 rounded-full font-bold shadow-sm">
+                        SCAN
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Address */}
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Address</p>
-                    <p className="font-medium hover:text-primary transition-colors">
+                    <p className="font-medium hover:text-primary transition-colors text-balance">
                       First Floor, Princess Cars Building,
                       <br />
                       Near Oasis Mall, Sheikh Zayed Road,
