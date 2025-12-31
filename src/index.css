@@ -510,12 +510,34 @@
     border-radius: 1rem;
     overflow: hidden;
     border: 3px solid hsl(35, 32%, 55%);
+    background: black;
     box-shadow: 
       0 0 40px hsla(35, 32%, 55%, 0.6),
       0 0 80px hsla(35, 35%, 60%, 0.4),
       0 0 120px hsla(35, 32%, 55%, 0.3),
       inset 0 0 60px hsla(35, 35%, 70%, 0.2);
     animation: premiumGlow 2s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Desktop specific lightbox optimizations */
+  @media (min-width: 1024px) {
+    .premium-lightbox-content.portrait-lightbox {
+      max-width: 65vh;
+      height: 90vh;
+    }
+    
+    .premium-lightbox-content.landscape-lightbox {
+      width: 85vw;
+      max-height: 85vh;
+    }
+    
+    .premium-lightbox-content.square-lightbox {
+      width: 85vh;
+      height: 85vh;
+    }
   }
   
   @keyframes premiumGlow {

@@ -79,6 +79,7 @@ export const PortfolioSection = () => {
               variants={staggerItem}
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
+              onClick={() => setLightboxImage({ src: project.image, alt: project.title })}
               className="group relative aspect-[4/5] overflow-hidden rounded-lg cursor-pointer golden-glow premium-shimmer"
             >
               {/* Image */}
