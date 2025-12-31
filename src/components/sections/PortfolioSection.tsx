@@ -21,7 +21,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Corporate Spaces and Offices',
+    title: 'Corporate Spaces & Offices',
     category: 'Commercial',
     image: Corporate_headquarter,
     description: 'Modern office space fostering creativity and collaboration.',
