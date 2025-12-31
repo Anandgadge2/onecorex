@@ -6,30 +6,36 @@ import { staggerContainer, staggerItem } from '@/lib/motion';
 import { Button } from '@/components/ui/button';
 import { PremiumLightbox } from '@/components/ui/premium-lightbox';
 import luxury_villa from '../../assets/luxury_villa.png';
-import Corporate_headquarters from '../../assets/Corporate_headquarter1.png';
+import Corporate_headquarter from '../../assets/Corporate_headquarter1.png';
 import restraurant from '../../assets/restraurant.jpg';
 
 const projects = [
   {
     id: 1,
-    title: 'Luxury Villa Interior',
+    title: 'Luxury Apartment',
     category: 'Residential',
     image: luxury_villa,
-    description: 'A contemporary living space blending comfort with elegance.',
+    description: 'A contemporary 6-bedroom villa with panoramic views.',
+    // area: '12,000 sq.ft',
+    // location: 'Palm Jumeirah, Dubai',
   },
   {
     id: 2,
-    title: 'Modern Office Space',
+    title: 'Corporate Spaces and Offices',
     category: 'Commercial',
-    image: Corporate_headquarters,
-    description: 'Innovative workspace design fostering creativity and collaboration.',
+    image: Corporate_headquarter,
+    description: 'Modern office space fostering creativity and collaboration.',
+    // area: '25,000 sq.ft',
+    // location: 'DIFC, Dubai',
   },
   {
     id: 3,
-    title: 'Boutique Restaurant',
+    title: 'Fine Dining Restaurant',
     category: 'F&B',
     image: restraurant,
-    description: 'An immersive dining experience through thoughtful interior design.',
+    description: 'An immersive dining experience through thoughtful design.',
+    // area: '4,500 sq.ft',
+    // location: 'Downtown Dubai',
   },
 ];
 

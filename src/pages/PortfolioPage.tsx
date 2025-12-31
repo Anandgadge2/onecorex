@@ -18,6 +18,7 @@ const categories = [
   'F&B',
   'Retail',
   'Healthcare',
+  'Entertainment',
 ];
 
 const projects = [
@@ -27,17 +28,17 @@ const projects = [
     category: 'Residential',
     image: luxury_villa,
     description: 'A contemporary 6-bedroom villa with panoramic views.',
-    area: '12,000 sq.ft',
-    location: 'Palm Jumeirah, Dubai',
+    // area: '12,000 sq.ft',
+    // location: 'Palm Jumeirah, Dubai',
   },
   {
     id: 2,
-    title: 'Corporate Headquarters',
+    title: 'Corporate Spaces and Offices',
     category: 'Commercial',
     image: Corporate_headquarter,
     description: 'Modern office space fostering creativity and collaboration.',
-    area: '25,000 sq.ft',
-    location: 'DIFC, Dubai',
+    // area: '25,000 sq.ft',
+    // location: 'DIFC, Dubai',
   },
   {
     id: 3,
@@ -45,8 +46,8 @@ const projects = [
     category: 'F&B',
     image: restraurant,
     description: 'An immersive dining experience through thoughtful design.',
-    area: '4,500 sq.ft',
-    location: 'Downtown Dubai',
+    // area: '4,500 sq.ft',
+    // location: 'Downtown Dubai',
   },
   {
     id: 4,
@@ -54,26 +55,26 @@ const projects = [
     category: 'Retail',
     image: fashion_store,
     description: 'Elegant retail space for luxury fashion brand.',
-    area: '2,800 sq.ft',
-    location: 'Dubai Mall',
+    // area: '2,800 sq.ft',
+    // location: 'Dubai Mall',
   },
   {
     id: 5,
-    title: 'Wellness Spa & Clinic',
+    title: 'Spa',
     category: 'Healthcare',
     image: wellness_spa,
     description: 'Serene healthcare environment promoting wellbeing.',
-    area: '8,000 sq.ft',
-    location: 'Jumeirah, Dubai',
+    // area: '8,000 sq.ft',
+    // location: 'Jumeirah, Dubai',
   },
   {
     id: 6,
-    title: 'Luxury Apartment in Downtown Dubai',
-    category: 'Residential',
+    title: 'Entertainment Spaces',
+    category: 'Entertainment',
     image: penthouse_apartment,
-    description: 'Luxurious penthouse with bespoke interiors.',
-    area: '6,500 sq.ft',
-    location: 'Business Bay, Dubai',
+    description: 'Entertainment spaces with state-of-the-art facilities.',
+    // area: '6,500 sq.ft',
+    // location: 'Business Bay, Dubai',
   },
 ];
 
@@ -209,11 +210,11 @@ const PortfolioPage = () => {
                   <p className="text-sm text-white/90 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {project.description}
                   </p>
-                  <div className="flex gap-4 text-xs text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* <div className="flex gap-4 text-xs text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span>{project.area}</span>
                     <span>•</span>
                     <span>{project.location}</span>
-                  </div>
+                  </div> */}
 
                   {/* Premium Golden Arrow Button - Top Right */}
                   <motion.button
