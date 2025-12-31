@@ -4,7 +4,7 @@ import { Layout } from '@/components/layout/Layout';
 import { staggerContainer, staggerItem } from '@/lib/motion';
 import { ArrowUpRight } from 'lucide-react';
 import { PremiumLightbox } from '@/components/ui/premium-lightbox';
-import Corporate_headquarter from '../assets/Corporate_headquarter.png';
+import Corporate_headquarter from '../assets/Corporate_headquarter1.png';
 import fashion_store from '../assets/fashion_store.jpg';
 import luxury_villa from '../assets/luxury_villa.png';
 import penthouse_apartment from '../assets/penthouse_apartment.png';
@@ -23,7 +23,7 @@ const categories = [
 const projects = [
   {
     id: 1,
-    title: 'Luxury Villa Interior',
+    title: 'Luxury Apartment',
     category: 'Residential',
     image: luxury_villa,
     description: 'A contemporary 6-bedroom villa with panoramic views.',
@@ -185,6 +185,7 @@ const PortfolioPage = () => {
                   className="absolute inset-0"
                   animate={{
                     scale: hoveredId === project.id ? 1.1 : 1,
+                    filter: hoveredId === project.id ? 'blur(4px)' : 'blur(0px)',
                   }}
                   transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                 >
@@ -195,12 +196,13 @@ const PortfolioPage = () => {
                   />
                 </motion.div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+                <div className={`absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent transition-opacity duration-300 ${hoveredId === project.id ? 'opacity-100' : 'opacity-60'}`} />
 
                 <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
-                  <span className="label-elegant block mb-2 text-white/80">
+                  <span className="label-elegant block mb-1 text-white/90">
                     {project.category}
                   </span>
+                  <div className="gold-line mb-3 w-12" />
                   <h3 className="heading-card mb-2 text-white group-hover:text-white transition-colors">
                     {project.title}
                   </h3>

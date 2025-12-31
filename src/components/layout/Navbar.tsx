@@ -8,11 +8,11 @@ import logoG from '../../assets/logoG.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
+  { name: 'About Us', path: '/about' },
   { name: 'Services', path: '/services' },
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'Why Us', path: '/why-us' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Contact Us', path: '/contact' },
 ];
 
 export const Navbar = () => {

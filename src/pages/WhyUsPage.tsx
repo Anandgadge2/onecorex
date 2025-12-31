@@ -141,7 +141,7 @@ const WhyUsPage = () => {
                 className="card-new-hover golden-glow p-8 pb-12 text-center"
               >
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                  <img src={item.icon} alt="" className="w-8 h-8 text-primary" />
+                  <img src={item.icon} alt="" className="w-18 h-18 text-primary" />
                 </div>
                 <h3 className="heading-card mb-4 text-black">{item.title}</h3>
                 <p className="body-elegant text-sm text-gray-600">{item.description}</p>

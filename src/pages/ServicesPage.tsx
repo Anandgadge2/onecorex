@@ -461,7 +461,7 @@ const ServicesPage = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+              className="grid md:grid-cols-2 lg:grid-cols-2 gap-4 max-w-5xl mx-auto"
             >
               {[
                 'Civil Works',
@@ -743,7 +743,7 @@ const ServicesPage = () => {
                 transition={{ delay: 0.4 }}
                 className="heading-section mb-6 text-white"
               >
-                Where <span className="text-black">Creativity</span> Meets <span className="text-primary">Precision</span>
+                Where <span className="text-black">Creativity</span> Meets <span className="text-black">Precision</span>
               </motion.h2>
               <motion.div
                 initial={{ opacity: 0 }}

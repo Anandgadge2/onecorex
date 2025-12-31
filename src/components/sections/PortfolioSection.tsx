@@ -6,7 +6,7 @@ import { staggerContainer, staggerItem } from '@/lib/motion';
 import { Button } from '@/components/ui/button';
 import { PremiumLightbox } from '@/components/ui/premium-lightbox';
 import luxury_villa from '../../assets/luxury_villa.png';
-import Corporate_headquarters from '../../assets/Corporate_headquarter.png';
+import Corporate_headquarters from '../../assets/Corporate_headquarter1.png';
 import restraurant from '../../assets/restraurant.jpg';
 
 const projects = [
@@ -49,11 +49,11 @@ export const PortfolioSection = () => {
           className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16"
         >
           <div>
-            <motion.span variants={staggerItem} className="label-elegant-light block mb-4 text-black ">
+            <motion.span variants={staggerItem} className="label-elegant-light block mb-4 text-foreground ">
               Our Portfolio
             </motion.span>
             <motion.h2 variants={staggerItem} className="heading-section">
-              <span className="text-primary">Featured</span> <span className="text-black">Projects</span>
+              <span className="text-primary">Featured</span> <span className="text-foreground">Projects</span>
             </motion.h2>
             <motion.div variants={staggerItem} className="gold-line-lg mt-6" />
           </div>
@@ -90,6 +90,7 @@ export const PortfolioSection = () => {
                   className="absolute inset-0"
                   animate={{
                     scale: hoveredId === project.id ? 1.1 : 1,
+                    filter: hoveredId === project.id ? 'blur(4px)' : 'blur(0px)',
                   }}
                   transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                 >
@@ -101,7 +102,7 @@ export const PortfolioSection = () => {
                 </motion.div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+                <div className={`absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent transition-opacity duration-300 ${hoveredId === project.id ? 'opacity-100' : 'opacity-60'}`} />
 
                 {/* Content */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
@@ -112,7 +113,8 @@ export const PortfolioSection = () => {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <span className="label-elegant-light block mb-2 text-white">{project.category}</span>
+                    <span className="label-elegant-light block mb-1 text-white/90">{project.category}</span>
+                    <div className="gold-line mb-3 w-12" />
                     <h3 className="heading-card mb-2 text-white group-hover:text-white transition-colors">
                       {project.title}
                     </h3>

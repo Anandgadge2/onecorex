@@ -89,20 +89,20 @@ const AboutPage = () => {
     <motion.img
       src={sachinImg}
       alt="Sachin Wagh"
-      className="w-[280px] h-[360px] object-cover rounded-[20px] transition-all duration-300 group-hover:brightness-110 group-hover:shadow-xl"
+      className="w-[250px] h-[300px] object-cover rounded-[20px] transition-all duration-300 group-hover:brightness-110 group-hover:shadow-xl"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     />
   </div>
 
   <motion.h3 
-    className="mt-4 text-2xl font-medium text-secondary transition-colors duration-300 group-hover:text-primary"
+    className="mt-1 text-2xl font-medium text-secondary transition-colors duration-300 group-hover:text-primary"
   >
     Sachin Wagh
   </motion.h3>
 
   <motion.p 
-    className="mt-1 text-base text-primary transition-colors duration-300 group-hover:text-primary/80"
+    className="text-base text-primary transition-colors duration-300 group-hover:text-primary/80"
   >
     Founder & Managing Director
   </motion.p>
@@ -119,20 +119,20 @@ const AboutPage = () => {
     <motion.img
       src={vedanginiImg}
       alt="Vedangini Wagh"
-      className="w-[280px] h-[360px] object-cover rounded-[20px] transition-all duration-300 group-hover:brightness-110 group-hover:shadow-xl"
+      className="w-[250px] h-[300px] object-cover rounded-[20px] transition-all duration-300 group-hover:brightness-110 group-hover:shadow-xl"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     />
   </div>
 
   <motion.h3 
-    className="mt-4 text-2xl font-medium text-secondary transition-colors duration-300 group-hover:text-primary"
+    className="mt-1 text-2xl font-medium text-secondary transition-colors duration-300 group-hover:text-primary"
   >
     Vedangini Wagh
   </motion.h3>
 
   <motion.p 
-    className="mt-1 text-base text-primary transition-colors duration-300 group-hover:text-primary/80"
+    className="text-base text-primary transition-colors duration-300 group-hover:text-primary/80"
   >
     Co-Founder & Creative Director
   </motion.p>
@@ -258,7 +258,7 @@ const AboutPage = () => {
   className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto"
 >
   {/* Sachin Wagh */}
-  <motion.div
+  {/* <motion.div
     initial={{ opacity: 0, x: -30 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
@@ -289,10 +289,10 @@ const AboutPage = () => {
     >
       Founder & Managing Director
     </motion.p>
-  </motion.div>
+  </motion.div> */}
 
   {/* Vedangini Wagh */}
-  <motion.div
+  {/* <motion.div
     initial={{ opacity: 0, x: 30 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
@@ -324,7 +324,7 @@ const AboutPage = () => {
     >
       Co-Founder & Creative Director
     </motion.p>
-  </motion.div>
+  </motion.div> */}
 </motion.div>
 
         </div>

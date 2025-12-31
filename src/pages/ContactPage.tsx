@@ -4,6 +4,13 @@ import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import {
   Phone,
@@ -154,10 +161,10 @@ const ContactPage = () => {
                       <img
                         src={qrCode}
                         alt="Contact QR"
-                        className="w-24 h-24 md:w-32 md:h-32 object-contain"
+                        className="w-25 h-25 md:w-32 md:h-32 object-contain"
                       />
-                      <div className="absolute -bottom-2 -right-2 bg-primary text-white text-[10px] px-2 py-0.5 rounded-full font-bold shadow-sm">
-                        SCAN
+                      <div className="text-xs absolute -bottom-2 -right-2 bg-primary text-white text-[10px] px-2 py-0.8 rounded-full font-bold shadow-sm">
+                        chat with us
                       </div>
                     </div>
                   </motion.div>
@@ -290,15 +297,23 @@ const ContactPage = () => {
                     >
                       Subject
                     </label>
-                    <Input
-                      id="subject"
-                      name="subject"
+                    <Select
+                      onValueChange={(value) => setFormData({ ...formData, subject: value })}
                       value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="Project Inquiry"
                       required
-                      className="bg-white border-border focus:border-primary"
-                    />
+                    >
+                      <SelectTrigger className="bg-white border-border focus:border-primary transition-all duration-300 hover:shadow-md hover:shadow-primary/5">
+                        <SelectValue placeholder="Select Project Type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="High-end Luxury Villas">High-end Luxury Villas</SelectItem>
+                        <SelectItem value="Retails Spaces (Stores & Showrooms)">Retails Spaces (Stores & Showrooms)</SelectItem>
+                        <SelectItem value="F&B (Restaurants & Cafés)">F&B (Restaurants & Cafés)</SelectItem>
+                        <SelectItem value="Commercial Spaces and Corporate Offices">Commercial Spaces and Corporate Offices</SelectItem>
+                        <SelectItem value="Entertainment Spaces">Entertainment Spaces</SelectItem>
+                        <SelectItem value="Healthcare & Wellness">Healthcare & Wellness</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
 

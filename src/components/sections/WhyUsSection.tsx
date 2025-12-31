@@ -119,7 +119,7 @@ export const WhyUsSection = () => {
                 className=" gap-4 p-4 rounded-lg  card-new-hover golden-glow pb-12 text-center"
               >
                 <div className="flex-shrink-0 flex justify-center mb-4">
-                  <img src={item.icon} alt="" className="w-12 h-12 object-contain" />
+                  <img src={item.icon} alt="" className="w-14 h-14 object-contain" />
                 </div>
                 <div>
                   <h4 className="font-display text-lg mb-2">{item.title}</h4>
