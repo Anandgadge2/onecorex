@@ -23,7 +23,7 @@ const categories = [
 const projects = [
   {
     id: 1,
-    title: 'Luxury Villa Palm Jumeirah',
+    title: 'Luxury Villa Interior',
     category: 'Residential',
     image: luxury_villa,
     description: 'A contemporary 6-bedroom villa with panoramic views.',
@@ -68,7 +68,7 @@ const projects = [
   },
   {
     id: 6,
-    title: 'Penthouse Apartment',
+    title: 'Luxury Apartment in Downtown Dubai',
     category: 'Residential',
     image: penthouse_apartment,
     description: 'Luxurious penthouse with bespoke interiors.',

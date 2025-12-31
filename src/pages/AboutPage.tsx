@@ -89,14 +89,14 @@ const AboutPage = () => {
     <motion.img
       src={sachinImg}
       alt="Sachin Wagh"
-      className="w-[300px] h-[380px] object-cover rounded-[20px] transition-all duration-300 group-hover:brightness-110 group-hover:shadow-xl"
+      className="w-[280px] h-[360px] object-cover rounded-[20px] transition-all duration-300 group-hover:brightness-110 group-hover:shadow-xl"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     />
   </div>
 
   <motion.h3 
-    className="mt-6 text-2xl font-medium text-secondary transition-colors duration-300 group-hover:text-primary"
+    className="mt-4 text-2xl font-medium text-secondary transition-colors duration-300 group-hover:text-primary"
   >
     Sachin Wagh
   </motion.h3>
@@ -119,14 +119,14 @@ const AboutPage = () => {
     <motion.img
       src={vedanginiImg}
       alt="Vedangini Wagh"
-      className="w-[300px] h-[380px] object-cover rounded-[20px] transition-all duration-300 group-hover:brightness-110 group-hover:shadow-xl"
+      className="w-[280px] h-[360px] object-cover rounded-[20px] transition-all duration-300 group-hover:brightness-110 group-hover:shadow-xl"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     />
   </div>
 
   <motion.h3 
-    className="mt-6 text-2xl font-medium text-secondary transition-colors duration-300 group-hover:text-primary"
+    className="mt-4 text-2xl font-medium text-secondary transition-colors duration-300 group-hover:text-primary"
   >
     Vedangini Wagh
   </motion.h3>

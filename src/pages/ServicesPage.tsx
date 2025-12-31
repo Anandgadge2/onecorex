@@ -695,7 +695,7 @@ const ServicesPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="order-2 lg:order-1"
             >
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl hover:scale-105 transition-transform golden-glow border-2 border-primary">
                 <img
                   src={sketches13}
                   alt="Design Process"
@@ -769,10 +769,10 @@ const ServicesPage = () => {
                 className="grid grid-cols-2 gap-4 "
               >
                 {[
-                  { number: '500+', label: 'Projects Completed' },
+                  { number: '50+', label: 'Projects Completed' },
                   { number: '15+', label: 'Years Experience' },
-                  { number: '98%', label: 'Client Satisfaction' },
-                  { number: '50+', label: 'Design Awards' }
+                  { number: '100%', label: 'Client Satisfaction' },
+                  { number: '25+', label: 'Design Recognition' }
                 ].map((stat, index) => (
                   <motion.div
                     key={index}

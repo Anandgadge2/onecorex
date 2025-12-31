@@ -5,37 +5,49 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import { staggerContainer, staggerItem } from '@/lib/motion';
 import { Button } from '@/components/ui/button';
 import whyUsBg from '../../assets/why-us-bg.jpg';
+import icon1 from '../../assets/1.png';
+import icon2 from '../../assets/2.png';
+import icon3 from '../../assets/3.png';
+import icon4 from '../../assets/4.png';
+import icon5 from '../../assets/5.png';
+import icon6 from '../../assets/6.png';
 
 const differentiators = [
   {
     title: 'Integrated Design + Build',
     description:
       'Reduces cost overruns, shortens delivery times, and preserves creative vision from start to finish.',
+    icon: icon1,
   },
   {
     title: 'Precision Without Excess',
     description:
       'Lean, intelligent structure with no unnecessary overhead or inflated mark-ups.',
+    icon: icon2,
   },
   {
     title: 'Crafted for Performance',
     description:
       'We focus on how a space feels, functions, and flows - creating environments that work beautifully.',
+    icon: icon3,
   },
   {
     title: 'Transparent & Collaborative',
     description:
       'Every milestone, material choice, and cost breakdown is shared clearly with our clients.',
+    icon: icon4,
   },
   {
     title: 'Local Insight, Global Perspective',
     description:
       'International design standards blended with local expertise for regulatory precision.',
+    icon: icon5,
   },
   {
     title: 'Technology at the Core',
     description:
       'From 3D visualizations to digital project tracking - clarity, control, and confidence.',
+    icon: icon6,
   },
 ];
 
@@ -46,7 +58,7 @@ export const WhyUsSection = () => {
   return (
     <section ref={ref} className="relative section-padding overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 ">
         <img
           src={whyUsBg}
           alt=""
@@ -101,12 +113,13 @@ export const WhyUsSection = () => {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                whileHover={{ x: 5 }}
+                whileHover={{ x: 2 }}
                 transition={{ duration: 0.3 }}
-                className="flex gap-4 golden-glow p-4 rounded-lg"
+                
+                className=" gap-4 p-4 rounded-lg  card-new-hover golden-glow pb-12 text-center"
               >
-                <div className="flex-shrink-0 mt-1">
-                  <CheckCircle className="w-5 h-5 text-primary" />
+                <div className="flex-shrink-0 flex justify-center mb-4">
+                  <img src={item.icon} alt="" className="w-12 h-12 object-contain" />
                 </div>
                 <div>
                   <h4 className="font-display text-lg mb-2">{item.title}</h4>

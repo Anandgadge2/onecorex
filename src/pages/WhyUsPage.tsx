@@ -1,49 +1,47 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { staggerContainer, staggerItem } from '@/lib/motion';
-import {
-  Layers,
-  Target,
-  Sparkles,
-  Users,
-  Globe,
-  Cpu,
-} from 'lucide-react';
+import icon1 from '../assets/1.png';
+import icon2 from '../assets/2.png';
+import icon3 from '../assets/3.png';
+import icon4 from '../assets/4.png';
+import icon5 from '../assets/5.png';
+import icon6 from '../assets/6.png';
 import whyUsBg from '../assets/why-us-bg.jpg';
 
 const differentiators = [
   {
-    icon: Layers,
+    icon: icon1,
     title: 'Integrated Design + Build Approach',
     description:
       'This integration reduces cost overruns, shortens delivery times, and preserves the creative vision from start to finish.',
   },
   {
-    icon: Target,
+    icon: icon2,
     title: 'Precision Without Excess',
     description:
       'We maintain a lean, intelligent structure - no unnecessary overhead, no inflated mark-ups - allowing us to deliver superior results at exceptional value.',
   },
   {
-    icon: Sparkles,
+    icon: icon3,
     title: 'Crafted for Performance',
     description:
       'Our designs go beyond aesthetics. We focus on how a space feels, functions, and flows - creating environments that work beautifully.',
   },
   {
-    icon: Users,
+    icon: icon4,
     title: 'Transparent & Collaborative',
     description:
       'We believe in open communication & accountability. Every project milestone, material choice, and cost breakdown is shared clearly with our clients.',
   },
   {
-    icon: Globe,
+    icon: icon5,
     title: 'Local Insight, Global Perspective',
     description:
       'Based in Dubai, we blend international design standards with local expertise, ensuring our projects meet both creative ambition and regulatory precision.',
   },
   {
-    icon: Cpu,
+    icon: icon6,
     title: 'Technology at the Core',
     description:
       'From 3D visualizations to digital project tracking, we employ smart tools that bring clarity, control, and confidence to every stage of the project.',
@@ -143,7 +141,7 @@ const WhyUsPage = () => {
                 className="card-new-hover golden-glow p-8 pb-12 text-center"
               >
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                  <item.icon className="w-8 h-8 text-primary" />
+                  <img src={item.icon} alt="" className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="heading-card mb-4 text-black">{item.title}</h3>
                 <p className="body-elegant text-sm text-gray-600">{item.description}</p>
@@ -211,7 +209,7 @@ const WhyUsPage = () => {
           >
             {[
               {
-                number: '1000+',
+                number: '50+',
                 label: 'Projects Completed',
                 description: 'Successfully delivered projects across residential, commercial, and retail sectors'
               },
@@ -221,13 +219,13 @@ const WhyUsPage = () => {
                 description: 'Decades of combined expertise in interior design and fit-out solutions'
               },
               {
-                number: '98%',
+                number: '100%',
                 label: 'Client Satisfaction',
                 description: 'Consistently exceeding client expectations with exceptional service'
               },
               {
                 number: '50+',
-                label: 'Design Awards',
+                label: 'Design Recognition',
                 description: 'Recognition for innovative and sustainable design solutions'
               },
               {

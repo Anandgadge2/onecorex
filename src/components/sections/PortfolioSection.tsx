@@ -40,7 +40,7 @@ export const PortfolioSection = () => {
   const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
 
   return (
-    <section ref={ref} className="section-padding bg-charcoal">
+    <section ref={ref} className="section-padding">
       <div className="container-luxury">
         <motion.div
           variants={staggerContainer}
@@ -49,16 +49,16 @@ export const PortfolioSection = () => {
           className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16"
         >
           <div>
-            <motion.span variants={staggerItem} className="label-elegant-light block mb-4">
+            <motion.span variants={staggerItem} className="label-elegant-light block mb-4 text-black ">
               Our Portfolio
             </motion.span>
             <motion.h2 variants={staggerItem} className="heading-section">
-              <span className="text-white">Featured</span> <span className="text-black">Projects</span>
+              <span className="text-primary">Featured</span> <span className="text-black">Projects</span>
             </motion.h2>
             <motion.div variants={staggerItem} className="gold-line-lg mt-6" />
           </div>
           <motion.div variants={staggerItem}>
-            <Button variant="new" size="lg" asChild>
+            <Button variant="elegant" size="lg" asChild>
               <Link to="/portfolio" className="group">
                 View All Projects
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -66,85 +66,90 @@ export const PortfolioSection = () => {
             </Button>
           </motion.div>
         </motion.div>
+      </div>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          animate={isInView ? 'animate' : 'initial'}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
-        >
-          {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={staggerItem}
-              onMouseEnter={() => setHoveredId(project.id)}
-              onMouseLeave={() => setHoveredId(null)}
-              onClick={() => setLightboxImage({ src: project.image, alt: project.title })}
-              className="group relative aspect-[4/5] overflow-hidden rounded-lg cursor-pointer golden-glow premium-shimmer"
-            >
-              {/* Image */}
+      <motion.div className="bg-charcoal overflow-x-auto p-10">
+        <div className="container-luxury">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            animate={isInView ? 'animate' : 'initial'}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+          >
+            {projects.map((project) => (
               <motion.div
-                className="absolute inset-0"
-                animate={{
-                  scale: hoveredId === project.id ? 1.1 : 1,
-                }}
-                transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                key={project.id}
+                variants={staggerItem}
+                onMouseEnter={() => setHoveredId(project.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                onClick={() => setLightboxImage({ src: project.image, alt: project.title })}
+                className="group relative aspect-[4/5] overflow-hidden rounded-lg cursor-pointer golden-glow premium-shimmer"
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover golden-glow"
-                />
-              </motion.div>
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
-
-              {/* Content */}
-              <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
+                {/* Image */}
                 <motion.div
+                  className="absolute inset-0"
                   animate={{
-                    y: hoveredId === project.id ? 0 : 10,
-                    opacity: hoveredId === project.id ? 1 : 0.8,
+                    scale: hoveredId === project.id ? 1.1 : 1,
                   }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                 >
-                  <span className="label-elegant-light block mb-2 text-white">{project.category}</span>
-                  <h3 className="heading-card mb-2 text-white group-hover:text-white transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {project.description}
-                  </p>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover golden-glow"
+                  />
                 </motion.div>
 
-                {/* Premium Arrow Button - Top Right */}
-                <motion.button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setLightboxImage({ src: project.image, alt: project.title });
-                  }}
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+
+                {/* Content */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
+                  <motion.div
+                    animate={{
+                      y: hoveredId === project.id ? 0 : 10,
+                      opacity: hoveredId === project.id ? 1 : 0.8,
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <span className="label-elegant-light block mb-2 text-white">{project.category}</span>
+                    <h3 className="heading-card mb-2 text-white group-hover:text-white transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {project.description}
+                    </p>
+                  </motion.div>
+
+                  {/* Premium Arrow Button - Top Right */}
+                  <motion.button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setLightboxImage({ src: project.image, alt: project.title });
+                    }}
                     className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border-2 border-white/50 cursor-pointer z-20 transition-all duration-300 hover:bg-primary/30 hover:border-primary"
-                  animate={{
-                    scale: hoveredId === project.id ? 1 : 0,
-                    opacity: hoveredId === project.id ? 1 : 0,
-                  }}
-                  whileHover={{
-                    scale: 1.15,
-                    boxShadow: '0 0 30px hsla(35, 32%, 55%, 0.6)',
-                  }}
-                  transition={{ duration: 0.3 }}
-                  style={{
-                    boxShadow: '0 0 20px hsla(35, 32%, 55%, 0.4), inset 0 0 20px hsla(35, 35%, 70%, 0.2)',
-                  }}
-                >
-                  <ArrowUpRight className="w-5 h-5 text-white hover:text-primary" />
-                </motion.button>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+                    animate={{
+                      scale: hoveredId === project.id ? 1 : 0,
+                      opacity: hoveredId === project.id ? 1 : 0,
+                    }}
+                    whileHover={{
+                      scale: 1.15,
+                      boxShadow: '0 0 30px hsla(35, 32%, 55%, 0.6)',
+                    }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      boxShadow: '0 0 20px hsla(35, 32%, 55%, 0.4), inset 0 0 20px hsla(35, 35%, 70%, 0.2)',
+                    }}
+                  >
+                    <ArrowUpRight className="w-5 h-5 text-white hover:text-primary" />
+                  </motion.button>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.div>
+
       
       {/* Premium Lightbox */}
       <PremiumLightbox
