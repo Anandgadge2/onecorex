@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { staggerContainer, staggerItem } from '@/lib/motion';
-import visionBg from '../assets/vision-bg.jpg';
+import visionBg from '../assets/vision-bg2.jpg';
 import sachinImg from "@/assets/sachin.jpg";      
 import vedanginiImg from "@/assets/vedangini.jpg";
 

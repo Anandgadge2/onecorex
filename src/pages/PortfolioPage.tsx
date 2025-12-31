@@ -9,7 +9,7 @@ import fashion_store from '../assets/fashion_store.jpg';
 import luxury_villa from '../assets/luxury_villa.png';
 import penthouse_apartment from '../assets/penthouse_apartment.png';
 import restraurant from '../assets/restraurant.jpg';
-import portfolio from '../assets/portfolio-bg.png';
+import portfolio from '../assets/portfolio-bg1.png';
 import wellness_spa from '../assets/wellness_spa.jpg';
 const categories = [
   'All',
@@ -17,7 +17,7 @@ const categories = [
   'Commercial',
   'F&B',
   'Retail',
-  'Healthcare',
+  'Healthcare & Wellness',
   'Entertainment',
 ];
 
@@ -33,7 +33,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Corporate Spaces and Offices',
+    title: 'Corporate Spaces & Offices',
     category: 'Commercial',
     image: Corporate_headquarter,
     description: 'Modern office space fostering creativity and collaboration.',
@@ -61,7 +61,7 @@ const projects = [
   {
     id: 5,
     title: 'Spa',
-    category: 'Healthcare',
+    category: 'Healthcare & Wellness',
     image: wellness_spa,
     description: 'Serene healthcare environment promoting wellbeing.',
     // area: '8,000 sq.ft',
