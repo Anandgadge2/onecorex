@@ -8,11 +8,11 @@ import logoG from '../../assets/logoG.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
+  { name: 'About Us', path: '/about' },
   { name: 'Services', path: '/services' },
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'Why Us', path: '/why-us' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Contact Us', path: '/contact' },
 ];
 
 export const Navbar = () => {
@@ -137,7 +137,7 @@ export const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.nav
-              className="absolute right-0 top-0 bottom-0 w-80 bg-background border-l border-border p-8 pt-24"
+              className="absolute right-0 top-0 bottom-0 w-full sm:w-80 bg-background/95 backdrop-blur-2xl border-l border-primary/20 p-8 pt-24 shadow-gold"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}

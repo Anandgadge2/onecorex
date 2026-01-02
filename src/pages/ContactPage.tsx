@@ -4,6 +4,13 @@ import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import {
   Phone,
@@ -15,6 +22,7 @@ import {
   Send,
 } from 'lucide-react';
 import contactBg from '../assets/contact-bg.jpg';
+import qrCode from '../assets/QR.png';
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -108,7 +116,8 @@ const ContactPage = () => {
                 possibilities, we're here to help bring your vision to life.
               </p>
 
-              <div className="space-y-6 mb-10">
+              <div className="space-y-8 mb-10">
+                {/* Phone */}
                 <a
                   href="tel:+971525315971"
                   className="flex items-center gap-4 group"
@@ -124,28 +133,51 @@ const ContactPage = () => {
                   </div>
                 </a>
 
-                <a
-                  href="mailto:info@onecorex.ae"
-                  className="flex items-center gap-4 group"
-                >
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Mail className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium group-hover:text-primary transition-colors">
-                      info@onecorex.ae
-                    </p>
-                  </div>
-                </a>
+                {/* Email & QR Wrapper */}
+                <div className="flex items-center justify-between gap-6">
+                  <a
+                    href="mailto:info@onecorex.ae"
+                    className="flex items-center gap-4 group"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Mail className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Email</p>
+                      <p className="font-medium group-hover:text-primary transition-colors">
+                        info@onecorex.ae
+                      </p>
+                    </div>
+                  </a>
 
+                  {/* QR Code */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9, x: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                    whileHover={{ scale: 1.05 }}
+                    className="relative"
+                  >
+                    <div className="relative p-2 rounded-xl border border-primary/30 bg-white shadow-gold/10 shadow-lg hover:shadow-gold/20 transition-all duration-300 hover:golden-glow">
+                      <img
+                        src={qrCode}
+                        alt="Contact QR"
+                        className="w-25 h-25 md:w-32 md:h-32 object-contain"
+                      />
+                      <div className="text-xs absolute -bottom-2 -right-2 bg-primary text-white text-[10px] px-2 py-0.8 rounded-full font-bold shadow-sm">
+                        chat with us
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Address */}
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Address</p>
-                    <p className="font-medium">
+                    <p className="font-medium hover:text-primary transition-colors text-balance">
                       First Floor, Princess Cars Building,
                       <br />
                       Near Oasis Mall, Sheikh Zayed Road,
@@ -171,7 +203,7 @@ const ContactPage = () => {
                     <MessageCircle size={20} />
                   </motion.a>
                   <motion.a
-                    href="https://instagram.com/onecorex"
+                    href="https://www.instagram.com/onecorex01?igsh=d2QzdHc5dHl3eHZx&utm_source=ig_contact_invite"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
@@ -265,15 +297,23 @@ const ContactPage = () => {
                     >
                       Subject
                     </label>
-                    <Input
-                      id="subject"
-                      name="subject"
+                    <Select
+                      onValueChange={(value) => setFormData({ ...formData, subject: value })}
                       value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="Project Inquiry"
                       required
-                      className="bg-white border-border focus:border-primary"
-                    />
+                    >
+                      <SelectTrigger className="bg-white border-border focus:border-primary transition-all duration-300 hover:shadow-md hover:shadow-primary/5">
+                        <SelectValue placeholder="Select Project Type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="High-end Luxury Villas">High-end Luxury Villas</SelectItem>
+                        <SelectItem value="Retails Spaces (Stores & Showrooms)">Retails Spaces (Stores & Showrooms)</SelectItem>
+                        <SelectItem value="F&B (Restaurants & Cafés)">F&B (Restaurants & Cafés)</SelectItem>
+                        <SelectItem value="Commercial Spaces and Corporate Offices">Commercial Spaces and Corporate Offices</SelectItem>
+                        <SelectItem value="Entertainment Spaces">Entertainment Spaces</SelectItem>
+                        <SelectItem value="Healthcare & Wellness">Healthcare & Wellness</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
 

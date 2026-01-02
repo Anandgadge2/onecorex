@@ -4,12 +4,12 @@ import { Layout } from '@/components/layout/Layout';
 import { staggerContainer, staggerItem } from '@/lib/motion';
 import { ArrowUpRight } from 'lucide-react';
 import { PremiumLightbox } from '@/components/ui/premium-lightbox';
-import Corporate_headquarter from '../assets/Corporate_headquarter.png';
+import Corporate_headquarter from '../assets/Corporate_headquarter1.png';
 import fashion_store from '../assets/fashion_store.jpg';
 import luxury_villa from '../assets/luxury_villa.png';
 import penthouse_apartment from '../assets/penthouse_apartment.png';
 import restraurant from '../assets/restraurant.jpg';
-import portfolio from '../assets/portfolio-bg.png';
+import portfolio from '../assets/portfolio-bg1.png';
 import wellness_spa from '../assets/wellness_spa.jpg';
 const categories = [
   'All',
@@ -17,27 +17,28 @@ const categories = [
   'Commercial',
   'F&B',
   'Retail',
-  'Healthcare',
+  'Healthcare & Wellness',
+  'Entertainment',
 ];
 
 const projects = [
   {
     id: 1,
-    title: 'Luxury Villa Palm Jumeirah',
+    title: 'Luxury Apartment',
     category: 'Residential',
     image: luxury_villa,
     description: 'A contemporary 6-bedroom villa with panoramic views.',
-    area: '12,000 sq.ft',
-    location: 'Palm Jumeirah, Dubai',
+    // area: '12,000 sq.ft',
+    // location: 'Palm Jumeirah, Dubai',
   },
   {
     id: 2,
-    title: 'Corporate Headquarters',
+    title: 'Corporate Spaces & Offices',
     category: 'Commercial',
     image: Corporate_headquarter,
     description: 'Modern office space fostering creativity and collaboration.',
-    area: '25,000 sq.ft',
-    location: 'DIFC, Dubai',
+    // area: '25,000 sq.ft',
+    // location: 'DIFC, Dubai',
   },
   {
     id: 3,
@@ -45,8 +46,8 @@ const projects = [
     category: 'F&B',
     image: restraurant,
     description: 'An immersive dining experience through thoughtful design.',
-    area: '4,500 sq.ft',
-    location: 'Downtown Dubai',
+    // area: '4,500 sq.ft',
+    // location: 'Downtown Dubai',
   },
   {
     id: 4,
@@ -54,26 +55,26 @@ const projects = [
     category: 'Retail',
     image: fashion_store,
     description: 'Elegant retail space for luxury fashion brand.',
-    area: '2,800 sq.ft',
-    location: 'Dubai Mall',
+    // area: '2,800 sq.ft',
+    // location: 'Dubai Mall',
   },
   {
     id: 5,
-    title: 'Wellness Spa & Clinic',
-    category: 'Healthcare',
+    title: 'Spa',
+    category: 'Healthcare & Wellness',
     image: wellness_spa,
     description: 'Serene healthcare environment promoting wellbeing.',
-    area: '8,000 sq.ft',
-    location: 'Jumeirah, Dubai',
+    // area: '8,000 sq.ft',
+    // location: 'Jumeirah, Dubai',
   },
   {
     id: 6,
-    title: 'Penthouse Apartment',
-    category: 'Residential',
+    title: 'Entertainment Spaces',
+    category: 'Entertainment',
     image: penthouse_apartment,
-    description: 'Luxurious penthouse with bespoke interiors.',
-    area: '6,500 sq.ft',
-    location: 'Business Bay, Dubai',
+    description: 'Entertainment spaces with state-of-the-art facilities.',
+    // area: '6,500 sq.ft',
+    // location: 'Business Bay, Dubai',
   },
 ];
 
@@ -178,12 +179,14 @@ const PortfolioPage = () => {
                 layout
                 onMouseEnter={() => setHoveredId(project.id)}
                 onMouseLeave={() => setHoveredId(null)}
+                onClick={() => setLightboxImage({ src: project.image, alt: project.title })}
                 className="group relative aspect-[4/5] overflow-hidden rounded-lg cursor-pointer golden-glow premium-shimmer"
               >
                 <motion.div
                   className="absolute inset-0"
                   animate={{
                     scale: hoveredId === project.id ? 1.1 : 1,
+                    filter: hoveredId === project.id ? 'blur(4px)' : 'blur(0px)',
                   }}
                   transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                 >
@@ -194,23 +197,24 @@ const PortfolioPage = () => {
                   />
                 </motion.div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+                <div className={`absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent transition-opacity duration-300 ${hoveredId === project.id ? 'opacity-100' : 'opacity-60'}`} />
 
                 <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
-                  <span className="label-elegant block mb-2 text-white/80">
+                  <span className="label-elegant block mb-1 text-white/90">
                     {project.category}
                   </span>
+                  <div className="gold-line mb-3 w-12" />
                   <h3 className="heading-card mb-2 text-white group-hover:text-white transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-white/90 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {project.description}
                   </p>
-                  <div className="flex gap-4 text-xs text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* <div className="flex gap-4 text-xs text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span>{project.area}</span>
                     <span>•</span>
                     <span>{project.location}</span>
-                  </div>
+                  </div> */}
 
                   {/* Premium Golden Arrow Button - Top Right */}
                   <motion.button

@@ -61,8 +61,8 @@ export const AboutSection = () => {
           >
             {[
               { number: '15+', label: 'Years of Excellence' },
-              { number: '200+', label: 'Projects Delivered' },
-              { number: '50+', label: 'Expert Professionals' },
+              { number: '50+', label: 'Projects Delivered' },
+              { number: '30+', label: 'Expert Professionals' },
               { number: '100%', label: 'Client Satisfaction' },
             ].map((stat, index) => (
               <motion.div

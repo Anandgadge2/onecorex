@@ -17,7 +17,7 @@ const socialItems = [
   },
   {
     icon: Instagram,
-    href: 'https://instagram.com/onecorex',
+    href: 'https://www.instagram.com/onecorex01?igsh=d2QzdHc5dHl3eHZx&utm_source=ig_contact_invite',
     label: 'Instagram',
     color: 'bg-gradient-to-br from-purple-600 to-pink-500 hover:opacity-90',
   },
@@ -53,7 +53,7 @@ export const SocialFloat = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ delay: index * 0.05 }}
-                className={`flex items-center gap-3 px-4 py-2 rounded-full text-foreground shadow-lg-custom ${item.color} transition-all`}
+                className={`flex items-center gap-3 px-4 py-2 rounded-full text-white shadow-lg-custom ${item.color} transition-all`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -69,8 +69,8 @@ export const SocialFloat = () => {
         onClick={() => setIsOpen(!isOpen)}
         className={`w-14 h-14 rounded-full flex items-center justify-center shadow-lg-custom transition-all ${
           isOpen
-            ? 'bg-secondary text-foreground'
-            : 'bg-primary text-primary-foreground animate-pulse-glow'
+            ? 'bg-[#3d2f1f] text-white'
+            : 'bg-[#3d2f1f] text-white animate-pulse-glow'
         }`}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}

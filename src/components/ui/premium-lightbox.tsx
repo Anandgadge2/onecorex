@@ -57,22 +57,16 @@ export const PremiumLightbox = ({ isOpen, onClose, imageSrc, imageAlt }: Premium
 
   const getLightboxContentClass = () => {
     if (!imageDimensions) return 'premium-lightbox-content';
+    return `premium-lightbox-content ${imageOrientation}-lightbox`;
+  };
+
+  const getLightboxStyle = () => {
+    if (!imageDimensions) return {};
     
-    const aspectRatio = imageDimensions.width / imageDimensions.height;
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-    
-    // For portrait images, allow more height
-    if (imageOrientation === 'portrait') {
-      return 'premium-lightbox-content portrait-lightbox';
-    }
-    
-    // For landscape images, constrain width more
-    if (imageOrientation === 'landscape') {
-      return 'premium-lightbox-content landscape-lightbox';
-    }
-    
-    return 'premium-lightbox-content';
+    // For desktop, we want to ensure the box fits the image exactly
+    return {
+      aspectRatio: `${imageDimensions.width} / ${imageDimensions.height}`,
+    };
   };
 
   return (
@@ -93,6 +87,7 @@ export const PremiumLightbox = ({ isOpen, onClose, imageSrc, imageAlt }: Premium
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
               className={getLightboxContentClass()}
+              style={getLightboxStyle()}
               onClick={(e) => e.stopPropagation()}
             >
               <img
