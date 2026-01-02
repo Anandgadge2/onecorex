@@ -203,7 +203,7 @@ const ContactPage = () => {
                     <MessageCircle size={20} />
                   </motion.a>
                   <motion.a
-                    href="https://instagram.com/onecorex"
+                    href="https://www.instagram.com/onecorex01?igsh=d2QzdHc5dHl3eHZx&utm_source=ig_contact_invite"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}

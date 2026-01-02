@@ -17,7 +17,7 @@ const socialItems = [
   },
   {
     icon: Instagram,
-    href: 'https://instagram.com/onecorex',
+    href: 'https://www.instagram.com/onecorex01?igsh=d2QzdHc5dHl3eHZx&utm_source=ig_contact_invite',
     label: 'Instagram',
     color: 'bg-gradient-to-br from-purple-600 to-pink-500 hover:opacity-90',
   },

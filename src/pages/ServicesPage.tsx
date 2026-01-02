@@ -318,7 +318,7 @@ const ServicesPage = () => {
                     <motion.circle
                       cx={x}
                       cy="80"
-                      r="27"
+                      r="30"
                       stroke="hsl(0, 0%, 100%)"
                       strokeWidth="2.5"
                       fill="none"
@@ -538,7 +538,7 @@ const ServicesPage = () => {
                       }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.5 + index * 0.02 }}
-                      className="text-sm font-medium text-gray-700 group-hover:text-primary transition-all duration-300"
+                      className="text-xl font-medium text-gray-700 group-hover:text-primary transition-all duration-300"
                       style={{
                         textShadow: '0 0 10px hsla(35, 32%, 55%, 0.3)',
                       }}
